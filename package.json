@@ -1,0 +1,55 @@
+{
+  "name": "btc-converter",
+  "version": "1.0.0",
+  "description": "A CLI to conveter Bitcoin to any currency provided",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rimraf bin",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --reporter nyan",
+    "test:tdd": "npm run test -- --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "btc-converter": "bin/main.js"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Raphael Freire <raphaelmachadofreire@gmail.com> (https://raphaelfreire.com.br/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^3.5.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.20.2",
+    "husky": "^0.11.9",
+    "mocha": "^7.1.1",
+    "nock": "^9.0.13",
+    "nyc": "^15.0.1",
+    "rimraf": "^2.7.1"
+  },
+  "dependencies": {
+    "commander": "^2.20.3",
+    "node-cli": "^0.1.0"
+  }
+}
