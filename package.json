@@ -26,6 +26,10 @@
       "tests/**"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaphaelFreire/btc-converter.git"
+  },
   "keywords": [
     "js",
     "tdd",
