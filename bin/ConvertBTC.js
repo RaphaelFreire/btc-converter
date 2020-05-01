@@ -21,7 +21,7 @@ function convertBTC() {
 
     try {
       apiResponse = JSON.parse(body);
-      console.log(chalk.red(amount) + ' BTC to ' + chalk.cyan(currency) + ' = ' + chalk.yellow(apiResponse.price));
+      return console.log(chalk.red(amount) + ' BTC to ' + chalk.cyan(currency) + ' = ' + chalk.yellow(apiResponse.price));
     } catch (parseError) {
       console.log(chalk.red('Something went wrong in the API. Try in a few minutes'));
 
