@@ -20,22 +20,13 @@ function convertBTC() {
     var apiResponse = void 0;
 
     try {
-      // const options = {
-      //   headers: {
-      //     'x-ba-key': 'NTEzOTMzNmFhNjVjNDRjZjg5OTA1ODBiMTZhYzQ5NzQ',
-      //   },
-      // };
-
-      // response.headers = options;
-
       apiResponse = JSON.parse(body);
+      console.log(chalk.red(amount) + ' BTC to ' + chalk.cyan(currency) + ' = ' + chalk.yellow(apiResponse.price));
     } catch (parseError) {
       console.log(chalk.red('Something went wrong in the API. Try in a few minutes'));
 
       return parseError;
     }
-
-    console.log(chalk.red(amount) + ' BTC to ' + chalk.cyan(currency) + ' = ' + chalk.yellow(apiResponse.price));
   });
 }
 

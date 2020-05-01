@@ -17,14 +17,12 @@ function convertBTC(currency = 'USD', amount = 1) {
 
     try {
       apiResponse = JSON.parse(body);
-      return apiResponse;
+      console.log(`${chalk.red(amount)} BTC to ${chalk.cyan(currency)} = ${chalk.yellow(apiResponse.price)}`);
     } catch (parseError) {
       console.log(chalk.red('Something went wrong in the API. Try in a few minutes'));
 
       return parseError;
     }
-
-    console.log(`${chalk.red(amount)} BTC to ${chalk.cyan(currency)} = ${chalk.yellow(apiResponse.price)}`);
   });
 }
 
